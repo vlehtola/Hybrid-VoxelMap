@@ -1,7 +1,11 @@
 # Hybrid-VoxelMap
 
 <div align="center">
-    <img src="pics/Hybrid_VoxelMap_demo.gif" width = 50% >
+  <a href="https://youtu.be/9RCtITLkl84">
+    <img src="pics/kitti08_harp_cover_frame0_ieee_ral_icra_2026_1080p.png" width="50%" alt="Hybrid-VoxelMap demo video">
+  </a>
+  <br>
+  <b>Click the image to watch the demo video</b>
 </div>
 
 **Hybrid-VoxelMap** improves upon VoxelMap / VoxelMap++ with three key contributions:
