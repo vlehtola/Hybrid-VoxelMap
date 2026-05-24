@@ -1,0 +1,70 @@
+voxel_mapping_odom:
+  ros__parameters:
+    common:
+      lid_topic: "/livox/lidar_semantic"
+      imu_topic: "/vn100/imu"
+      time_offset_lidar_to_imu: 0.0
+      reliable_lidar_qos: false
+      lidar_qos_depth: 512
+      imu_qos_depth: 4096
+
+    preprocess:
+      lidar_type: 6
+      scan_line: 1
+      blind: 0.5
+      point_filter_num: 1
+      calib_laser: false
+      kitti_vertical_filter: false
+
+    mapping:
+      down_sample_size: 0.2
+      max_iteration: 20
+      max_distance: 100.0
+      voxel_size: 1.0
+      plannar_threshold: 0.001
+      update_size_threshold: 5
+      init_plane_threshold: 100
+      sigma_num: 3
+      abs_residual_gating: true
+      use_step_convergence: true
+      min_iteration: 3
+      converge_translation: 0.001
+      converge_rotation: 0.0001
+      iekf_step_scale: 0.5
+      min_effective_features: 0
+      max_solver_condition: 0.0
+      skip_map_update_on_unstable: false
+      publish_iteration_debug: false
+      semantic_debug: false
+      debug_csv_enable: false
+
+    runtime:
+      log_interval: 50
+
+    noise_model:
+      ranging_cov: 0.02
+      angle_cov: 0.01
+      acc_cov_scale: 0.06
+      gyr_cov_scale: 0.005
+
+    imu:
+      imu_en: true
+      use_lidar_constant_velocity: false
+      use_lidar_constant_velocity_deskew: false
+      extrinsic_T: [0.0, 0.0, 0.0]
+      extrinsic_R: [1.0, 0.0, 0.0,
+                    0.0, 1.0, 0.0,
+                    0.0, 0.0, 1.0]
+
+    visualization:
+      pub_point_cloud: false
+      dense_map_enable: false
+      pub_point_cloud_skip: 2
+
+    Result:
+      write_kitti_log: false
+      result_path: "result/mcd_ntu_day_10_mid70_body_semantic.txt"
+      tum_result_dir: "result"
+      tum_result_prefix: "mcd_ntu_day_10_mid70_body_semantic"
+      tum_result_path: ""
+      efficiency_path: ""

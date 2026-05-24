@@ -1,0 +1,41 @@
+# ROS 2 / colcon build products
+build/
+install/
+log/
+
+# Experiment outputs
+result/
+video_dump/
+video_exports/
+
+# Local private experiment wrappers, checkpoints, and machine-specific paths
+local_private/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Large or generated data artifacts
+*.bag
+*.db3
+*.mcap
+*.pcd
+*.ply
+*.bin
+*.label
+*.mp4
+*.avi
+*.mov
+
+# Model / deployment artifacts
+*.pth
+*.pt
+*.onnx
+*.engine
+*.plan
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store

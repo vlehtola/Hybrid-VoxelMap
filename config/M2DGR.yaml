@@ -1,0 +1,50 @@
+voxel_mapping_odom:
+  ros__parameters:
+    common:
+      lid_topic: "/velodyne_points"
+      imu_topic: "/handsfree/imu"
+      time_offset_lidar_to_imu: 0.0
+      reliable_lidar_qos: false
+      lidar_qos_depth: 512
+
+    preprocess:
+      lidar_type: 2     # Livox = 1, velodyne = 2, L515 = 3, OUSTER = 4, Hesai = 5
+      scan_line: 32
+      blind: 0.01
+      point_filter_num: 1
+      calib_laser: false
+
+    mapping:
+      down_sample_size: 0.4
+      max_iteration: 20
+      max_distance: 150.0
+      voxel_size: 0.5
+      plannar_threshold: 0.001
+      update_size_threshold: 5
+      init_plane_threshold: 500
+      sigma_num: 3
+
+    noise_model:
+      ranging_cov: 0.02
+      angle_cov: 0.1
+      acc_cov_scale: 1.0
+      gyr_cov_scale: 0.5
+
+    imu:
+      imu_en: true
+      extrinsic_T: [0.27255, -0.00053, 0.17954]
+      extrinsic_R: [1.0, 0.0, 0.0,
+                    0.0, 1.0, 0.0,
+                    0.0, 0.0, 1.0]
+
+    visualization:
+      pub_point_cloud: true
+      dense_map_enable: false
+      pub_point_cloud_skip: 1
+
+    Result:
+      write_kitti_log: false
+      result_path: "kitt_log.txt"
+      tum_result_dir: "result"
+      tum_result_prefix: "gate03_hybrid_voxel_map"
+      tum_result_path: ""
