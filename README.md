@@ -1,5 +1,8 @@
 # Hybrid-VoxelMap
 
+> [!IMPORTANT]
+> **Update:** A ROS 2 Humble version is now available in the [`ros2-humble`](https://github.com/haiyang2022/Hybrid-VoxelMap/tree/ros2-humble) branch. The ROS 2 version fixes several important bugs, includes updated dataset adapters, and is the recommended version for new users. The original ROS 1 / Noetic version on `main` is kept for reference only and is no longer actively maintained.
+
 <div align="center">
   <a href="https://youtu.be/9RCtITLkl84">
     <img src="pics/kitti08_harp_cover_frame0_ieee_ral_icra_2026_1080p.png" width="50%" alt="Hybrid-VoxelMap demo video">
