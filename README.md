@@ -132,21 +132,7 @@ The generic adapter supports:
 
 ## 4. Run with ROS 2 Bags
 
-The examples below use converted ROS 2 bags. Replace `/path/to/...` with your downloaded bag path.
-
-Recommended release bags:
-
-```text
-kitti08_raw_pointcloud2_ros2
-ntu_day_10_mid70_vn100_body_ros2
-ntu_day_10_mid70_vn100_body_pointcloud2_ros2
-```
-
-The converted ROS 2 bags can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1bLoCGIyhwZCb6jP-FduEwCrqNcINROYD?usp=sharing).
-
-The first two are sufficient for Gaussian-only odometry examples. The PointCloud2 MCD bag is used by online semantic front ends and the generic semantic adapter.
-
-Please check the original dataset licenses before redistributing converted bags. The example bags are derived from KITTI and MCD/VIRAL data and should be used only under the original dataset terms, with attribution and non-commercial academic use where required. If redistribution is not suitable for your use case, convert the bags locally from the original datasets using the format described in Section 5.
+The examples below use converted ROS 2 bags. Replace `/path/to/...` with your bag path.
 
 ### 4.1 KITTI 08
 
@@ -393,10 +379,6 @@ The MCD bag was generated from the original Mid-70 LiDAR and VN100 IMU data. The
 2. Transforms each Mid-70 point into the VN100 body frame using the dataset calibration.
 3. Preserves each point's Livox `offset_time` for motion compensation.
 4. Keeps `/vn100/imu` in the same bag with the original timestamps.
-
-No semantic labels or semantic predictions are written into the released MCD bag.
-
-For online semantic examples, an additional PointCloud2 version of the MCD bag is provided. It is converted from the same body-frame Mid-70 + VN100 data, but publishes the LiDAR stream as `sensor_msgs/msg/PointCloud2` on `/livox/lidar_raw_body` so a semantic front end can process each frame before Hybrid-VoxelMap consumes it. This bag also does not contain semantic labels or predictions.
 
 ## 6. Notes on the ROS 2 Version
 
